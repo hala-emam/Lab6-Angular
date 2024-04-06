@@ -1,0 +1,37 @@
+<div class="mb-3">
+  <select class="form-select" [(ngModel)]="selectedCategoryid">
+    <option selected value="0">All</option>
+    <option *ngFor="let cat of categories" [value]="cat.id">
+      {{ cat.name }}
+    </option>
+  </select>
+</div>
+<div>
+  <app-product
+    [recievedCategoryid]="selectedCategoryid"
+    (onClickToBuyProduct)="productInfo($event)"
+  ></app-product>
+</div>
+<table class="table mt-5 table-primary">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+  <tbody>
+    <tr *ngFor="let prod of buyProducts">
+      <td>{{ prod.name }}</td>
+      <td>{{ prod.price }}</td>
+      <td>{{ prod.quantity }}</td>
+      <td>
+        <button (click)="removeProduct(prod)" class="btn btn-danger">
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

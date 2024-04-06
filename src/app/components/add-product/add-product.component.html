@@ -1,0 +1,113 @@
+<h2>{{ newProduct | json }}</h2>
+<form class="w-50" (submit)="addNewProduct()" #addProductForm="ngForm">
+  <div class="mb-3">
+    <label for="product-name" class="form-label">Name</label>
+    <input
+      type="text"
+      required
+      pattern="^[a-zA-Z]{3,25}$"
+      class="form-control"
+      name="name"
+      id="product-name"
+      [(ngModel)]="newProduct.name"
+      #productName="ngModel"
+    />
+    @if(productName.invalid && productName.touched){
+    <div class="text-danger ">
+      @if(productName.errors?.['required']){
+        <p>Name is required</p>
+      }
+      @if(productName.errors?.['pattern']){
+        <p>Name must be at least 3 characters</p>
+      }
+
+    </div>
+    }
+  </div>
+
+  <div class="mb-3">
+    <label for="product-price" class="form-label">Price</label>
+    <input
+      type="number"
+      required
+      class="form-control"
+      name="price"
+      min="1000"
+      max="100000"
+      id="product-price"
+      [(ngModel)]="newProduct.price"
+      #productPrice="ngModel"
+    />
+
+    @if(productPrice.invalid && productPrice.touched){
+      <div class="text-danger ">
+        @if(productPrice.errors?.['required']){
+          <p>Name is required</p>
+        }
+        @if(productPrice.errors?.['min']){
+          <p>Price must be at least 1000</p>
+        }
+        @if(productPrice.errors?.['max']){
+          <p>Price must be not exceed 100000 </p>
+        }
+      </div>
+      }
+  </div>
+  <div class="mb-3">
+    <label for="product-quantity" class="form-label">Quantity</label>
+    <input
+      type="number"
+      class="form-control"
+      name="quantity"
+      required
+      min="1"
+      id="product-quantity"
+      [(ngModel)]="newProduct.quantity"
+      #productQuantity="ngModel"
+    />
+    @if(productQuantity.invalid && productQuantity.touched){
+      <div class="text-danger ">
+        @if(productQuantity.errors?.['required']){
+          <p>Quantity is required</p>
+        }
+        @if(productQuantity.errors?.['min']){
+          <p>Quantity must be at least 1</p>
+        }
+      </div>
+      }
+  </div>
+  <div class="mb-3">
+    <label for="category" class="form-label">Category</label>
+    <select
+      class="form-select"
+      name="category"
+      id="category"
+      [(ngModel)]="newProduct.categoryid"
+      #selectCat="ngModel"
+    >
+      @for(cat of catergories; track cat.id){
+      <option value="cat.id">{{ cat.name }}</option>
+      }
+    </select>
+
+  </div>
+  <div class="mb-3">
+    <label for="product-image" class="form-label">Image</label>
+    <input
+      type="file"
+      class="form-control"
+      name="image"
+      id="product-image"
+      [(ngModel)]="newProduct.imgURL"
+    />
+
+  </div>
+
+  <button
+    type="submit"
+    [disabled]="addProductForm.invalid"
+    class="btn btn-primary"
+  >
+    Add Product
+  </button>
+</form>

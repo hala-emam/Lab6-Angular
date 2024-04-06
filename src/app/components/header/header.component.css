@@ -1,0 +1,19 @@
+.bg-color {
+  background-color: rgb(16, 55, 120);
+  /* background-color: #4F81F7; */
+  color: white !important;
+  border-radius: 4px;
+}
+
+.notification-dropdown {
+  position: relative;
+  margin-left: 20px;
+}
+.notification-dropdown .dropdown-menu {
+  top: 100%;
+  margin-top: 5px;
+}
+.notification-dropdown .dropdown-menu .notification-item {
+  width: 300px;
+  padding: 5px 20px;
+}

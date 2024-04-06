@@ -1,0 +1,66 @@
+{
+  "products": [
+    {
+      "id": "100",
+      "name": "Tablet Samsung",
+      "price": 15000,
+      "quantity": 2,
+      "imgURL": "../../../assets/images/tablet.jpg",
+      "categoryid": 1
+    },
+    {
+      "id": "200",
+      "name": "Laptop Lenovo",
+      "price": 30000,
+      "quantity": 0,
+      "imgURL": "../../../assets/images/laptop1.jpg",
+      "categoryid": 2
+    },
+    {
+      "id": "300",
+      "name": "Laptop Dell",
+      "price": 40000,
+      "quantity": 5,
+      "imgURL": "../../../assets/images/laptop2.jpg",
+      "categoryid": 2
+    },
+    {
+      "id": "500",
+      "name": "Mobile Oppo",
+      "price": 5000,
+      "quantity": 4,
+      "imgURL": "../../../assets/images/oppo-phone.jpg",
+      "categoryid": 3
+    },
+    {
+      "id": "600",
+      "name": "Mobile Samsung",
+      "price": 5000,
+      "quantity": 3,
+      "imgURL": "../../../assets/images/samsung.jpg",
+      "categoryid": 3
+    },
+    {
+      "id": "700",
+      "name": "Tablet",
+      "price": 10000,
+      "quantity": 4,
+      "imgURL": "../../../assets/images/tablet.jpg",
+      "categoryid": 1
+    }
+  ],
+  "catergories": [
+    {
+      "id": "1",
+      "name": "Tablets"
+    },
+    {
+      "id": "2",
+      "name": "Laptops"
+    },
+    {
+      "id": "3",
+      "name": "Mobiles"
+    }
+  ]
+}

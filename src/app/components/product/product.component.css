@@ -1,0 +1,22 @@
+.btn-buy {
+  padding: 7px 50px !important;
+  background-color: #4F81F7 !important;
+  color:white;
+  font-size: 1rem;
+}
+.btn-delete,.btn-update{
+  margin-top: 1rem;
+  padding: 7px 50px !important;
+}
+.card-body{
+  color:white
+}
+.c-date{
+  background-color: #103778;
+  color: white;
+  padding: 10px;
+}
+.c-date span{
+  color: #64B5F6;
+}
+

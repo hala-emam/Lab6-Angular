@@ -1,0 +1,59 @@
+<!-- <h2>Total Order Price: {{totalOrderPrice}}</h2>
+
+<div class="mb-3">
+  <select class="form-select" (change)="filterProducts()" aria-label="Default select example"  [(ngModel)]="selectedCategoryid">
+
+      <option selected  value="0" >All</option>
+      <option *ngFor="let cat of categories"  [value]="cat.id">{{cat.name}}</option>
+  </select>
+</div> -->
+
+<div class="row row-cols-1 row-cols-md-4 g-4 mt-3">
+  @for(prod of filteredProducts; track prod.id){
+  <div class="col">
+    <div class="card" appProductCard>
+      <img
+        [src]="prod.imgURL"
+        class="card-img-top"
+        alt="..."
+        style="width: 100%; height: 250px"
+      />
+      <div class="card-body text-center" BGColor="#103778">
+        <h5 class="card-title">{{ prod.name }}</h5>
+        <p class="card-text">Price: {{ prod.price }}</p>
+        <p class="card-text">Quantity: {{ prod.quantity }}</p>
+        <!-- <input type="number" > -->
+        <!-- <button class="btn btn-success  btn-buy " [routerLink]="["/products",prod.id]" >Details</button> -->
+        <button
+          class="btn  btn-buy"
+          (click)="navigateToDetailsOfProduct(prod.id)"
+        >
+          Details
+        </button>
+        <button class="btn btn-danger btn-delete" (click)="deleteProduct(prod.id)">
+          Delete
+        </button>
+        <button class="btn btn-success btn-update" (click)="updateProduct(prod.id)">
+          Update
+        </button>
+      </div>
+    </div>
+  </div>
+  }@empty{
+  <h1>Product not found</h1>
+  }
+</div>
+
+
+
+<!-- <div class="mt-5 c-date">
+  <h4>
+    id Number: <span>{{ id }}</span>
+  </h4>
+  <h4>
+    Date part: <span>{{ FullDate }}</span>
+  </h4>
+  <h4>
+    Returned value: <span>{{ id | nationaid : FullDate }}</span>
+  </h4>
+</div> -->
